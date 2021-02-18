@@ -16,7 +16,7 @@
 
 Acesse a demo do site através deste link:
 
-* [Clique aqui](http://rayanneblima.github.io/dev-finance/)
+* [Clique aqui](http://rayanneblima.github.io/dev.finance/)
 ## 💻 Projeto
 
 Facilitando a sua vida financeira 💰
