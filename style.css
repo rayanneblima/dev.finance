@@ -1,0 +1,301 @@
+/* --------------- GLOBAL --------------- */
+:root {
+  --dark-blue: #363F5F;
+  --light-blue: rgba(77,150,232,1);
+  --light-purple: rgba(113,118,253,1);
+  --dark-green: #2D4A22;
+  --green: #12A454;
+  --light-green: #49AA26;
+  --lighter-green: #3DD705;
+  --red: #E92929;
+  --light-gray: #F0F2F5;
+  --grey: #969CB3;
+  --white: #FFFFFF;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 93.75%; /* 15px */
+}
+
+body {
+  background: var(--light-gray);
+  font-family: 'Poppins', sans-serif;
+}
+
+/* mantem o componente visível apenas aos leitores de tela */
+.sr-only {
+  border-width: 0;
+  clip: rect(0, 0, 0, 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+.container {
+  margin: auto;
+  width: min(90vw, 800px);
+}
+
+/* --------------- TITLES --------------- */
+h2 {
+  color: var(--dark-blue);
+  font-weight: 400;
+  margin-bottom: 0.8rem;
+  margin-top: 3.2rem;
+}
+
+/* --------------- LINKS & BUTTONS --------------- */
+a {
+  color: var(--light-green);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--lighter-green);
+}
+
+button {
+  background: var(--light-green);
+  border: none;
+  border-radius: 0.25rem;
+  color: var(--white);
+  cursor: pointer;
+  height: 50px;
+  padding: 0;
+  width: 100%;
+}
+
+button:hover {
+  background: var(--lighter-green);
+}
+
+.button.new {
+  display: inline-block;
+  margin-bottom: 0.8rem;
+}
+
+.button.cancel {
+  align-items: center;
+  border: 2px var(--red) solid;
+  border-radius: 0.25rem;
+  color: var(--red);
+  display: flex;
+  height: 50px;
+  justify-content: center;
+  opacity: 0.6;
+}
+
+.button.cancel:hover {
+  opacity: 1;
+}
+
+/* --------------- HEADER --------------- */
+header {
+  background: linear-gradient(90deg, var(--light-blue) 0%, var(--light-purple) 60%);
+  padding: 2rem 0 12rem;
+  text-align: center;
+}
+
+header img {
+  width: 200px;
+}
+
+/* --------------- BALANCE --------------- */
+#balance {
+  margin-top: -8rem;
+}
+
+#balance h2 {
+  color: var(--white);
+  margin-top: 0;
+}
+
+/* --------------- CARDS --------------- */
+.card {
+  color: var(--dark-blue);
+  margin-bottom: 2rem;
+  padding: 1.5rem 2rem;
+
+  /* GlassMorphism Effect */
+  background: rgba( 255, 255, 255, 0.25 );
+  backdrop-filter: blur( 12.0px );
+  border-radius: 0.25rem;
+  box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+  -webkit-backdrop-filter: blur( 12.0px );
+}
+
+.card h3 {
+  align-items: center;
+  color: var(--white);
+  display: flex;
+  font-weight: normal;
+  font-size: 1rem;
+  justify-content: space-between;
+}
+
+.card p {
+  font-size: 2rem;
+  line-height: 3rem;
+  margin-top: 1rem;
+}
+
+.card.total {
+  color: var(--white);
+}
+
+/* --------------- TRANSACTION --------------- */
+#transaction {
+  display: block;
+  overflow-x: auto;
+}
+
+/* --------------- TABLE --------------- */
+#data-table {
+  border-spacing: 0 0.5rem;
+  color: var(--grey);
+  width: 100%;
+}
+
+#data-table thead tr:first-child,
+#data-table tbody td:first-child {
+  border-radius: 0.25rem 0 0 0.25rem;
+}
+
+#data-table thead tr:last-child,
+#data-table tbody td:last-child {
+  border-radius: 0 0.25rem 0.25rem 0;
+}
+
+#data-table tbody td:last-child img {
+  cursor: pointer;
+}
+
+#data-table th {
+  background: var(--white);
+  font-weight: normal;
+  padding: 1rem 2rem;
+  text-align: left;
+}
+
+#data-table tbody tr {
+  opacity: 0.7;
+}
+
+#data-table tbody tr:hover {
+  opacity: 1;
+}
+
+#data-table td {
+  background: var(--white);
+  padding: 1rem 2rem;
+}
+
+#data-table td.description {
+  color: var(--dark-blue);
+}
+
+#data-table td.income {
+  color: var(--green);
+}
+
+#data-table td.expense {
+  color: var(--red);
+}
+
+/* --------------- MODAL --------------- */
+.modal-overlay {
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  width: 100%;
+
+  opacity: 0;
+  visibility: hidden;
+
+  z-index: 999;
+}
+
+.modal-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal {
+  background: var(--light-gray);
+  padding: 2.4rem;
+  position: relative;
+  z-index: 0;
+}
+
+/* --------------- FORM --------------- */
+#form {
+  max-width: 500px;
+}
+
+#form h2 {
+  margin-top: 0;
+}
+
+#form form input {
+  border: none;
+  border-radius: 0.2rem;
+  padding: 0.8rem;
+  width: 100%;
+}
+
+.input-group {
+  margin-top: 0.8rem;
+}
+
+.input-group small {
+  opacity: 0.4;
+}
+
+.input-group.actions {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+}
+
+.input-group.actions a,
+.input-group.actions button {
+  width: 48%;
+}
+
+/* --------------- FOOTER --------------- */
+footer {
+  bottom: 0;
+  color: var(--dark-blue);
+  opacity: 0.6;
+  padding: 4rem 0 2rem;
+  position: relative;
+  text-align: center;
+  width: 100%;
+}
+
+/* --------------- RESPONSIVE --------------- */
+@media (min-width: 860px) {
+  html {
+    font-size: 87.5%;
+  }
+
+  #balance {
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
